@@ -1,6 +1,6 @@
 /* ================================
    Fast React Pizza - index.css
-   Best CSS (2 Columns × 3 Rows)
+   3D + Animated + Glowing Text + Best UI
    ================================ */
 
 /* Variables */
@@ -105,8 +105,18 @@ body {
   padding: 15px;
   border-radius: 12px;
   backdrop-filter: blur(8px);
-  animation: fadeInUp 1s ease both;
+  animation: fadeInUp 1s ease both, floatText 6s ease-in-out infinite alternate;
 }
+
+/* Paragraph inside cards */
+.card .desc {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 12px;
+  animation: fadeInUp 1s ease both, floatText 5s ease-in-out infinite alternate;
+}
+
+/* Paragraph keyframes */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -115,6 +125,17 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes floatText {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 
@@ -171,11 +192,7 @@ body {
 .card h1 {
   font-size: 22px;
   margin: 10px 0;
-}
-.card .desc {
-  font-size: 15px;
-  color: var(--muted);
-  margin-bottom: 12px;
+  animation: floatText 6s ease-in-out infinite alternate;
 }
 .card .available {
   display: inline-block;
@@ -203,6 +220,7 @@ body {
   background: linear-gradient(145deg, #1c233d, #11182c);
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  animation: floatText 6s ease-in-out infinite alternate;
 }
 .opening-section div {
   font-size: 18px;
