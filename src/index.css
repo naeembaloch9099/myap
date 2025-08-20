@@ -460,3 +460,61 @@ body {
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.8), 0 0 20px var(--accent2);
   }
 }
+/* ================================
+   Footer Styling - 3D + Animated + Glowing Text
+   ================================ */
+.app-footer {
+  margin-top: 50px;
+  padding: 30px 20px;
+  background: linear-gradient(145deg, #1c233d, #11182c);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px var(--accent1);
+  transform-style: preserve-3d;
+  animation: floatText 6s ease-in-out infinite alternate;
+}
+
+.app-footer p {
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(
+    90deg,
+    var(--accent1),
+    var(--accent2),
+    var(--accent3)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 6s infinite alternate;
+  margin-bottom: 15px;
+}
+
+.app-footer .socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.app-footer .socials a {
+  font-weight: 700;
+  text-decoration: none;
+  background: linear-gradient(
+    135deg,
+    var(--accent1),
+    var(--accent2),
+    var(--accent3)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 14px;
+  transition: transform 0.3s, text-shadow 0.3s;
+  animation: glow 4s infinite alternate;
+}
+
+.app-footer .socials a:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 12px var(--accent1), 0 0 20px var(--accent2);
+}

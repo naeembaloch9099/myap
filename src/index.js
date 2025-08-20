@@ -151,6 +151,23 @@ function App() {
       )}
 
       {confirmation && <div className="confirmation">{confirmation}</div>}
+      {/* ===== Footer ===== */}
+      <footer className="app-footer">
+        <div className="footer-content">
+          <p>© 2025 Fast React Pizza CO. All Rights Reserved.</p>
+          <div className="socials">
+            <a href="https://facebook.com" target="_blank" rel="noreferrer">
+              Facebook
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noreferrer">
+              Twitter
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
