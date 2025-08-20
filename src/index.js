@@ -44,7 +44,25 @@ function App() {
   const [confirmation, setConfirmation] = useState("");
 
   const handleOrderClick = (item) => {
-    if (item.available <= 0) return;
+    const now = new Date();
+    const currentHour = now.getHours(); // 0-23
+    const currentMinute = now.getMinutes();
+
+    // Allow order only between 12:00 PM (12) and 11:59 PM (23:59)
+    if (
+      currentHour < 11 ||
+      (currentHour === 23 && currentMinute > 59) ||
+      currentHour > 23
+    ) {
+      alert("Currently we are closed. We are open from 12:00 PM to 11:59 PM.");
+      return;
+    }
+
+    if (item.available <= 0) {
+      alert("Sorry, this item is out of stock.");
+      return;
+    }
+
     setSelectedItem(item);
     setOrderVisible(true);
     setConfirmation("");
@@ -151,6 +169,7 @@ function App() {
       )}
 
       {confirmation && <div className="confirmation">{confirmation}</div>}
+
       {/* ===== Footer ===== */}
       <footer className="app-footer">
         <div className="footer-content">
